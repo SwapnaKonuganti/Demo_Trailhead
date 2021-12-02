@@ -2,6 +2,7 @@ public with sharing class AccountExt {
 
     public ApexPages.StandardController record;
     public AccountExt(ApexPages.StandardController controller) {
+    // testing for demo
     record=controller;
     }
     
