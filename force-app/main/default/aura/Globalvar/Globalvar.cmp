@@ -1,0 +1,12 @@
+<aura:component >
+	Browser is in Tablet: {!$Browser.isTablet} <br></br>
+    Is it running on iphone:{!$Browser.isIPhone} <br></br>
+    Is it running on Android: {!$Browser.isAndroid} <br></br>
+    Where is it running : {!$Browser.formFactor} <br></br>
+    <br></br>
+    Language: {!$Locale.language}<br></br>
+    currency:{!$Locale.currency}<br></br>
+    Number:{!$Locale.numberFormat}<br></br>
+    Timezone:{!$Locale.timezone}
+    
+</aura:component>

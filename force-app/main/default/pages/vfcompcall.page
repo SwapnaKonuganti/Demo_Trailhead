@@ -1,0 +1,10 @@
+<apex:page controller="vfpstudent">
+<c:vfcomp stdlist="{!student}"/>
+<c:vfcompsection stu="{!stud}"/>
+    <apex:pageblock >
+        <apex:pageblocktable value="{!student}" var="s">
+            <apex:column value="{!s.Name}"/>
+            <apex:column value="{!s.Department__c}"/>
+        </apex:pageblocktable>
+    </apex:pageblock>
+</apex:page>

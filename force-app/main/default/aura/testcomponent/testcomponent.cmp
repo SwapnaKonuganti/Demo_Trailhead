@@ -1,0 +1,22 @@
+<aura:component  implements="flexipage:availableForAllPageTypes">
+	<!--<ltng:require scripts="{!$Resource.ChartJJS}" afterScriptsLoaded="{!c.generateChart}"/>
+
+    <div  >
+		<canvas aura:id="doughnutChart" height="5" width="40"></canvas>
+        <canvas aura:id="doughnutChart1" height="5" width="30"></canvas>
+        <canvas aura:id="doughnutChart2" height="5" width="30"></canvas>
+    </div> -->
+    <div class="slds-card">
+  <div class="slds-card__header slds-grid">
+    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+      <div class="slds-media__body">
+        <h2 class="slds-card__header-title">
+          </h2>
+      </div>
+    </header>
+  </div>
+  <div class="slds-card__body slds-card__body_inner">Card Body</div>
+  <footer class="slds-card__footer"></footer>
+</div>
+
+</aura:component>

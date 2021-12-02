@@ -1,0 +1,24 @@
+.THIS.allMainContainer {
+    background-color: rgb(175, 197, 222);
+    height: -webkit-fill-available;
+}
+.THIS .lex_background {
+    background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2);
+    background-repeat: repeat-x;
+    background-position: top left;
+}
+.THIS .cardshadow{
+    box-shadow:4px 4px 4px 4px rgba(0,0,0,0.25);
+    margin: 13px 13px 1px 13px;
+}
+.THIS .header{
+    left: 2.9988px;
+    right: 11.9988px;
+    padding-top: 1px;
+    border-radius: 4px;
+    transform: translate3d(0px, -0.0078125px, 0px);
+}
+.THIS .chartmargin{
+    box-shadow:4px 4px 4px 4px rgba(0,0,0,0.25);
+    margin: 4px 13px 1px 13px;
+   }

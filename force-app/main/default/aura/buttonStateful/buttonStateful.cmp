@@ -1,0 +1,15 @@
+<aura:component>
+    <aura:attribute name="buttonstate" type="Boolean" default="false"/>
+    <lightning:layoutItem>
+    <lightning:buttonStateful
+        labelWhenOff="Follow"
+        labelWhenOn="Following"
+        labelWhenHover="Unfollow"
+        iconNameWhenOff="utility:add"
+        iconNameWhenOn="utility:check"
+        iconNameWhenHover="utility:close"
+        state="{! v.buttonstate }"
+        onclick="{! c.handleClick }"
+    />
+    </lightning:layoutItem>
+</aura:component>

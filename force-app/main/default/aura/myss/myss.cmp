@@ -1,0 +1,10 @@
+<aura:component >
+	
+    <aura:attribute name="a1" type="Integer" default="15"/>
+    <aura:attribute name="b1" type="Integer" default="13"/>
+    <aura:attribute name="multiply" type="Integer"/>
+    
+    {!v.a1} *{!v.b1} ={!v.multiply}
+    <ui:button label="To Multiply" press="{!c.mul}" />
+
+</aura:component>

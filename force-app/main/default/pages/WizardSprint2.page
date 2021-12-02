@@ -1,0 +1,44 @@
+<apex:page standardController="ProjectI__c" extensions="WizadSprint" >
+    <apex:pageBlock >
+       <apex:pageBlockTable value="{!lstprj}" var="lstpr">
+           <apex:column value="{!lstpr.Name}"/>
+           <apex:column value="{!lstpr.Start_Date__c}"/>
+           <apex:column value="{!lstpr.Budget__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+	<apex:form >
+    	<apex:pageBlock title="Sprint Details">
+            <apex:pageBlockButtons >
+            	<apex:commandButton action="{!SaveSprint}" value="Save Sprint"/>
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                	<apex:outputText >Name  </apex:outputText>
+                    <apex:inputField value="{!sprint.Name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputText >Start Date  </apex:outputText>
+                    <apex:inputField value="{!sprint.Start_Date__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputText >End Date  </apex:outputText>
+                    <apex:inputField value="{!sprint.End_Date__c}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock rendered="{!lstsprint.size>0}">
+        	<apex:pageBlockTable value="{!lstsprint}" var="lst">
+            	<apex:column value="{!lst.Name}"/>
+                <apex:column value="{!lst.Start_Date__c}"/>
+                <apex:column value="{!lst.End_Date__c}"/>
+                <apex:column headerValue="Action">
+                	<apex:commandLink value="Add stories" action="{!GotoPage3}">
+                    	<apex:param assignTo="{!selsprint}" name="selsprint" value="{!lst.Id}"/>
+                	</apex:commandLink>
+                </apex:column>
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form> 
+    
+</apex:page>

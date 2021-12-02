@@ -1,0 +1,25 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome" access="global">
+    <!--<aura:attribute name="recordId" type="String" /> -->
+    <aura:attribute name="accountRecord" type="Object"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    
+    <force:recordData aura:id="recordLoader"
+    recordId="{!v.recordId}"
+    fields="Name,Description,Phone,Industry"
+    targetFields="{!v.accountRecord}"
+    targetError="{!v.recordLoadError}"
+    />
+     
+    
+   
+   <lightning:card iconName="lightning:card" title="Card" >
+         <!--   <div class="slds-p-horizontal-(-small">
+                <p class="slds-text-heading-(-small">
+                    <lightning:formattedText title="Account No : " value="{!v.AccountRecord.Account_No__c}" /></p>
+
+                <p class="slds-text-heading-(-small">
+                    <lightning:formattedText title="IFSC Code :" value="{!v.AccountRecord.IFSC_Code__c }" /></p>
+                
+            </div> -->
+        </lightning:card>
+</aura:component>

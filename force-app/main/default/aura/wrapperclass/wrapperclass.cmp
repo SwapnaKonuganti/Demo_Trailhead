@@ -1,0 +1,12 @@
+<aura:component >
+    <aura:attribute name="change" type="boolean" default="True" />
+    
+    <aura:if isTrue="{!v.change}" >
+        <ui:button label="I am all set" />
+        <aura:set attribute="else">
+            <ui:button label="I am no set" />
+        </aura:set>
+        
+    </aura:if>
+             
+</aura:component>

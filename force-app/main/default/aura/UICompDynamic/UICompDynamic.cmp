@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="Firstname" type="String" default="Update Firstname"/>
+    <aura:attribute name="Lastname" type="String" default="Lastname"/>
+    
+    <ui:inputText label="First" value="{!v.Firstname}" updateOn="keyup"/>
+    <ui:inputText label="Last" value="{!v.Lastname}" updateOn="keyup"/>
+    <br></br>
+    <ui:outputText value="{!v.Firstname +' '+v.Lastname}" />
+</aura:component>

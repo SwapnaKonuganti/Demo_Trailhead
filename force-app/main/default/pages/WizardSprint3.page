@@ -1,0 +1,35 @@
+<apex:page standardController="ProjectI__c" extensions="WizadSprint">
+   <apex:pageBlock >
+       <apex:pageBlockTable value="{!lstsprint}" var="lst">
+            <apex:column value="{!lst.Name}"/>
+            <apex:column value="{!lst.Start_Date__c}"/>
+            <apex:column value="{!lst.End_Date__c}"/>
+       </apex:pageBlockTable>
+   </apex:pageBlock>
+   <apex:form >
+    	<apex:pageBlock title="Story Information">
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Save Story" action="{!saveStory}"/>
+                <apex:commandButton value="Back" action="{!gotoPage2}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >Sprint Desciption</apex:outputText>
+                    <apex:inputField value="{!stry.Description__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >Start Points</apex:outputText>
+                    <apex:inputField value="{!stry.Story_Points__c}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock rendered="{!lstStories.size>0}">
+        	<apex:pageBlockTable value="{!lstStories}" var="stry" >
+            	<apex:column value="{!stry.Name}"/>
+                <apex:column value="{!stry.Description__c}"/>
+                <apex:column value="{!stry.Story_Points__c}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+	</apex:form> 
+</apex:page>

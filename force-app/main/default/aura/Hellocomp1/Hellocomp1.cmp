@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:attribute name="whom" type="string" default="Udemy" />
+    Hello {!V.whom}
+</aura:component>

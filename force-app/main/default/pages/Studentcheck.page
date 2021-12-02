@@ -1,0 +1,18 @@
+<apex:page controller="Studentcheck">
+
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!processSelected}" value="processSelected"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!Student}" var="s">
+                <apex:column >
+                    <apex:inputCheckbox value="{!s.Slt}"/>
+                </apex:column>
+                <apex:column value="{!s.stud.Name}" />
+                <apex:column value="{!s.stud.Class__c}" />
+                <apex:column value="{!s.stud.City__c}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

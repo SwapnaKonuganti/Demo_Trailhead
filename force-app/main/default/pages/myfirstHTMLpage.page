@@ -1,0 +1,36 @@
+<apex:page id="Page">
+<apex:stylesheet value="{!$Resource.Testing}"/>
+
+<script type="text/javascript">
+ function mystuage(){
+    var age=document.getElementById("Page:Pageform:StuAge").value;
+    alert(age);
+}
+
+</script>
+<script src="script.js"> </script>
+
+
+<apex:form id="Pageform">
+ <table>
+     <tr>
+         <td style="color:red;">Student Name  :
+         <apex:inputText onclick="function()"/>
+         </td>
+     </tr>
+     <tr>
+         <td class="labelcolor">Student Number    :
+         <apex:inputText />
+         </td>
+     </tr>
+      <tr >
+         <td class="labelcolor" >Student Age    :
+         <apex:inputText id="StuAge" />
+         </td>
+     </tr>
+
+ </table>
+      <apex:commandButton value="Save" onclick="mystuage()"/>
+      <apex:commandButton value="Cancel"/>
+ </apex:form>
+</apex:page>

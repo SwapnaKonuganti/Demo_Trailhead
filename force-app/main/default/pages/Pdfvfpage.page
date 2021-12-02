@@ -1,0 +1,68 @@
+<apex:page readOnly="true"     
+           standardController="Account"    
+           applyHtmlTag="false"     
+           sidebar="false"     
+           showHeader="false"     
+           cache="true"     
+           renderAs="advanced_pdf">    
+        
+    <head>    
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />    
+        <style type="text/css">    
+            
+            @page {    
+              
+                size: A4 landscape;    
+                border: 2px solid black;    
+                padding-left: 8px;    
+                padding-right: 8px;      
+                  
+            }    
+                
+            th {    
+              
+                text-align: center;    
+                font-weight: bold;    
+                  
+            }    
+                
+                
+            td {    
+              
+                text-align: center;    
+                font-size: 14px;    
+                  
+            }    
+                
+        </style>    
+          
+    </head>    
+      
+    <center>    
+      
+        <h3>Sample PDF = {!Account.Name}</h3>    
+          
+    </center><br/><br/>    
+      
+    <table border="1" width="99%">    
+      
+        <tr>    
+          
+            <th>First Name</th>    
+            <th>Last Name</th>    
+              
+        </tr>    
+        <apex:repeat value="{!Account.Contacts}" var="con">    
+          
+            <tr>    
+              
+                <td>{!con.FirstName}</td>    
+                <td>{!con.LastName}</td>    
+                  
+            </tr>    
+              
+        </apex:repeat>    
+          
+    </table>    
+    
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:component >
+    <apex:attribute name="stdlist" type="Student__c[]" description="list of stundent details" required=" true"/>
+    <apex:pageBlock >
+    	<apex:pageBlockTable value="{!stdlist}" var="s">
+        	<apex:column value="{!s.Name}"/>
+            <apex:column value="{!s.Department__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:component>

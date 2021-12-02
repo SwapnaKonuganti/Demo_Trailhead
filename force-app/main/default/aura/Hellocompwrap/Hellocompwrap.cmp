@@ -1,0 +1,5 @@
+<aura:component >
+	<h2>Welcome to wrapper class!!!!</h2>
+    <c:Hellocomp />
+    <c:Hellocomp1 whom="Swapna" />
+</aura:component>

@@ -1,0 +1,25 @@
+.THIS {
+    background-color:yellow;
+    Padding-top:20px;
+}
+
+h1.THIS{
+    font-size:60px;
+}
+
+.THIS .red{
+    background-color:red;
+
+}
+
+.THIS .blue{
+    background-color:blue;
+    font-size:10px
+
+}
+
+.THIS .green{
+    background-color:green;
+    padding:10px
+
+}

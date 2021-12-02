@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="val" type="string" default="I am just saying" /> <br></br>
+
+    <br></br>
+    {!v.val}
+    
+</aura:component>

@@ -1,0 +1,18 @@
+<apex:page showHeader="false" sidebar="false">
+    <apex:includeLightning />
+    <apex:includeScript value="/lightning/lightning.out.js"/>
+    <div id="LightningCompoid"/>
+    
+    <script>
+        $Lightning.use("c:ltngAppInVF",function(){
+            $Lightning.createComponent("c:ltngpageInVF",
+            {
+            },
+            "LightningCompoid",
+            function(cmp){
+                console.log('heyyy');
+            });
+        });
+    </script>
+    
+</apex:page>

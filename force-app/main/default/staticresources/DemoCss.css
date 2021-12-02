@@ -1,0 +1,18 @@
+    <Style>
+    	.label{
+        color:blue;
+        font-size: 20Px;
+        font-weight:bold;
+        }
+        .label1{
+        color: green;
+        font-size:15px
+        font-weight: bold;
+        }
+        .button {
+    	background-color: #4CAF50;
+        border: none;
+        color: white;
+        }
+    
+    </Style>

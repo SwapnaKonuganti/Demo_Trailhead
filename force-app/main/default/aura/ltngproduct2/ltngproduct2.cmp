@@ -1,0 +1,31 @@
+<aura:component controller="product2controller" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="options" type="List" />
+    <aura:attribute name="searchResult" type="List" />
+    <aura:attribute name="selectedValue" type="String" />
+    <aura:attribute name="issearching" type="boolean"/>
+    <aura:attribute name="isTrue" type="boolean"/>
+    <aura:attribute name="errorMessage" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    
+   <!-- <lightning:select class="slds-p-top_small" name="Objects" label="Select object:" aura:id="onjId" value="{!v.selectedValue}" >
+            <aura:iteration items="{!v.options}" var="objectname">
+                <option value="{!objectname}" text="{!objectname}" />  
+            </aura:iteration>
+        </lightning:select>-->
+    
+    <lightning:select name="selectItem" label="text"  value="{!v.selectedValue}" >
+        <aura:iteration items="{!v.options}" var="option">
+            <option value="{!option.value}" text="{!option.label}" 
+                    selected="{!option.selected}">
+            </option>
+        </aura:iteration>
+    </lightning:select>
+    
+    <div onkeyup="{!c.onChangeSearchText}">
+
+        <lightning:input aura:id="searchKnowledgeInput" name="searchKnowledgeInput" label="" type="search" placeholder="Search Model Name"
+            isLoading="{! v.issearching }" />
+    </div>
+	
+</aura:component>

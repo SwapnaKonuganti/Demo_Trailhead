@@ -1,0 +1,14 @@
+<apex:page standardController="Student__c" recordSetVar="student">
+        <!--use of data table-->
+        <apex:dataTable value="{!student}" var="s" border="2" cellpadding="2" cellspacing="2" align="center" >
+               <apex:facet name="header" >  Header   </apex:facet>
+               <apex:facet name="footer">Footer</apex:facet>
+        <apex:column headerValue="Name" >
+            <apex:outputText value="{!s.Name}" />
+        </apex:column>
+        <apex:column headerValue="Email id" >
+            <apex:outputText value="{!s.Email__c}" />
+        </apex:column>
+    </apex:dataTable>
+       
+</apex:page>

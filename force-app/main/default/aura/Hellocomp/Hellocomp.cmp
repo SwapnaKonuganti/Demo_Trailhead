@@ -1,0 +1,10 @@
+<aura:component >
+	<div class="white">
+    	Hello !!! welcome to component componsition
+    </div>
+    <ul>
+    	<li class="red"> I am red</li>
+        <li class="blue">I am blue</li>
+        <li class="green"> I am green </li>
+    </ul>
+</aura:component>

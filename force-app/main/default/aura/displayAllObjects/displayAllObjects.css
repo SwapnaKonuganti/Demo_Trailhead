@@ -1,0 +1,17 @@
+.THIS .slds-icon-text-default {
+    fill: rgb(0, 112, 210) !important;
+}
+.THIS .customRadioCls .slds-form-element__control .slds-radio{
+    display : inline-block !important;
+}
+.THIS .slds-form-element__legend {
+    font-weight: 400;
+}
+.THIS .fieldset {
+    margin: 0;
+    padding: 3px !important;
+}
+.THIS .textalign{
+    font-size: 500 !important;
+	font-weight: 300 !important;
+}

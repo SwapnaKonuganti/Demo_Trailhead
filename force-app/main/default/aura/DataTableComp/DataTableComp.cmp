@@ -1,0 +1,20 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes"
+                access="global"
+                controller="dataTableCtrl"> 
+    
+    <aura:attribute name="myOpps" type="Object"/>
+    <aura:attribute name="oppCols" type="List"/>
+    
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }"/>
+    
+   <!-- <lightning:card title="Opportunities Date Table with Inline Editing"> -->
+        <p class="slds-p-horizontal_small">
+            <lightning:datatable data="{! v.myOpps }"
+                                 columns="{! v.oppCols }"
+                                 keyField="Id"
+                                 onsave="{! c.handleSaveOpps }"
+
+                                 />
+        </p>
+    <!--</lightning:card>-->
+</aura:component>

@@ -1,0 +1,46 @@
+<aura:component controller="expensecnt">
+          
+    <aura:handler name="Expenses" value="{!this}" action="{!c.doExpenses}" />
+    <aura:attribute name="newExpense" type="Expense__c[]" 
+                    default="{'sobjectType':'Expense__c',
+                             			    'Name':'',
+                             				'Amount__c':0,
+                             				'Client__c':'',
+                             				'Date__c':'',
+                             				'Reimbursed__c':false
+                             	}" />
+    <aura:attribute name="total" type="Double" default="0.00" />
+    <aura:attribute name="exp" type="Double" default="0.00" />
+	    <div class="container">
+    <form>
+        <div>
+            <div>
+            	<ui:inputText aura:id="Expname" label="Expense name" value="{!v.newExpense.Name}" placeholder="My Expense" required="true" />
+            </div>
+        </div>
+        <div>
+            <div>
+                <ui:inputNumber aura:id="Amount" label="Amount" value="{!v.newExpense.Amount__c}" placeholder="11.23" required="true" />
+            </div>
+        </div>
+        <div>
+            <div>
+            	<ui:inputText aura:id="Client" label="Client" value="{!v.newExpense.Client__c}" placeholder="xyz" required="true" />
+            </div>
+        </div>     
+        <div>
+        	<div>
+            	<ui:inputDateTime aura:id="Date" label="Date" value="{!v.newExpense.Date__c}" displayDatePicker="true"/>
+            </div>
+        </div>       
+        <div>
+        	<div>
+            	<ui:inputCheckbox aura:id="Reimbursed" label="Reimbursed" value="{!v.newExpense.Reimbursed__c}" />
+            </div>
+        </div>     
+           	<ui:button label="submit" press="{!c.createExpense}" />
+  
+    </form>
+    </div>
+
+</aura:component>

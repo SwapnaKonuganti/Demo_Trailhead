@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:attribute name="text" type="string" default="I am working" />
+    <input type="button" value="click me" onclick="alert('Hi there what's up)" />
+    <input type="button" value="click Here" onclick="{!c.handleclick}" />
+    <ui:button label="click me aswell" press="{!c.handleclick}" />
+     <br></br>      
+    {!v.text}                
+</aura:component>

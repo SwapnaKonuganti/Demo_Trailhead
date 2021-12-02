@@ -1,0 +1,12 @@
+<template >
+    <div class="slds-p-bottom_large">
+        <lightning-card title="Contact Details" icon-name="action:add_contact">
+            <lightning-record-view-form record-id={accountId} object-api-name="Account">
+                <lightning-output-field class="slds-m-left_large" field-name="Customer_Id__c"></lightning-output-field>
+                <lightning-output-field class="slds-m-left_large" field-name="Mobile__c"></lightning-output-field>
+                <lightning-output-field class="slds-m-left_large" field-name="Email__c"></lightning-output-field>
+                <lightning-output-field class="slds-m-left_large" field-name="Preferred_Contact_Method__c"></lightning-output-field>
+            </lightning-record-view-form>
+        </lightning-card>
+    </div><br/><br/><br/><br/>
+</template>

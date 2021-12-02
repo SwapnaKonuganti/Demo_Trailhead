@@ -1,0 +1,26 @@
+<apex:page id="myPage" docType="html-5.0" controller="JqueryDatePicker">
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <apex:form id="myForm">
+      From Date: <apex:input type="date" id="fromDate" value="{!fromDate}" style="display:none;" /> <input type="text" id="fromDatePicker"></input>
+      To Date: <apex:input type="date" id="toDate" value="{!toDate}" style="display:none;" /> <input type="text" id="toDatePicker"></input>
+      <apex:commandButton value="Show Dates" action="{!showDates}" rerender="myPage"/>
+      <script type="text/javascript">
+          var $j = jQuery.noConflict();
+              $j( "#fromDatePicker" ).datepicker({
+                      numberOfMonths:1,
+                      altField: "#myPage\\:myForm\\:fromDate",
+                      altFormat: "yy-mm-dd"
+               });
+              $j( "#toDatePicker" ).datepicker({
+                      numberOfMonths:1,
+                      altField: "#myPage\\:myForm\\:toDate",
+                      altFormat: "yy-mm-dd"
+               });
+               $j("#fromDatePicker").value($j("#myPage\\:myForm\\:fromDate").value());
+               $j("#toDatePicker").value($j("#myPage\\:myForm\\:toDate").value());
+      </script>
+    </apex:form>
+</apex:page>

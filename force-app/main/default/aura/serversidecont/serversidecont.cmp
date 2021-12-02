@@ -1,0 +1,5 @@
+<aura:component controller="serversidecontroller">
+    <aura:attribute name="fname" type="string" default="swapna" />
+    <ui:button label="click here" press="{!c.echo}" />
+	
+</aura:component>

@@ -1,0 +1,20 @@
+<aura:component implements="flexipage:availableForRecordHome,force:lightningQuickActionWithoutHeader,force:hasRecordId">
+
+    <aura:attribute name="_record" type="Object" />
+    <aura:attribute name="_recordError" type="String" />
+
+    <force:recordPreview aura:id="recordLoader"
+      recordId="{!v.recordId}"
+      layoutType="FULL"
+      targetRecord="{!v._record}"
+      targetError="{!v._recordError}"
+      />
+
+    <!-- Display a header with details about the record -->
+    <div class="slds-page-header" role="banner">
+        <p class="slds-text-heading--label">{!v._record.Name}</p>
+        <h1 class="slds-page-header__title slds-m-right--small
+            slds-truncate slds-align-left">{!v._record.BillingCity}, {!v._record.BillingState}</h1>
+    </div>
+
+</aura:component>

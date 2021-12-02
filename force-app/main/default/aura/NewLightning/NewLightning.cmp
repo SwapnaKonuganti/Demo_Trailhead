@@ -1,0 +1,11 @@
+<aura:component >
+	<th class="slds-cell-edit" scope="row" tabindex="0">
+          <span class="slds-grid slds-grid_align-spread"><a class="slds-truncate" href="javascript:void(0);" id="link-01" tabindex="-1" title="Acme - 1,200 Widgets">Acme - 1,200 Widgets</a>
+            <button class="slds-button slds-button_icon slds-cell-edit__button slds-m-left_x-small" tabindex="-1" title="Edit Name of Acme - 1,200 Widgets">
+              <lightning:icon class="inlineedit" iconName="utility:edit" size="xx-small" alternativeText="edit"/>
+                    
+              <span class="slds-assistive-text">Edit Name of Acme - 1,200 Widgets</span>
+            </button>
+          </span>
+        </th>
+</aura:component>

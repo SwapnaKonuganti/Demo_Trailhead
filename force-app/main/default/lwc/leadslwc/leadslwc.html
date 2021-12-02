@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="My Lead" icon-name="action:new_lead">
+      <br/>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col"><div class="slds-truncate"><lightning-input type="checkbox"></lightning-input></div></th>
+                    <th class="" scope="col"><div class="slds-truncate" title="Model">Model</div></th>
+                    <th class="" scope="col"><div class="slds-truncate" title="Type">Type</div></th>
+                    <th class="" scope="col"><div class="slds-truncate" title="Prospect">Prospect</div></th>
+                    <th class="" scope="col"><div class="slds-truncate" title="Status">Status</div></th>
+                    <th class="" scope="col"><div class="slds-truncate" title="Assigned To Dealership">Assigned To Dealership</div></th>
+                    <th class="" scope="col"><div class="slds-truncate" title="Outcome">Outcome</div></th>
+                    <th class="" scope="col"><div class="slds-truncate" title="Consultant">Consultant</div></th>
+                </tr>
+            </thead>
+            <tbody>
+               <template for:each={data} for:item="ld">
+                    <tr key={ld.Id} onclick={showleads}>
+                        <th scope="col">
+                            <div>
+                                <lightning-input type="checkbox" value={ld.Model__c} data-id={ld.Id}></lightning-input>
+                            </div>
+                        </th>
+                        <th scope="col" style="text-align: center;">
+                            <div style="display: inline-block; width:30%;text-align: center;">
+                                    <img src={ld.Model__c} style="width: 100px; height:100px; margin: 10px; margin-left: 0px;
+                                    margin-top: 0px; margin-bottom: 0px;"/>
+                            </div>
+                        </th>
+                        <th scope="col"><div>{ld.Type__c}</div></th>
+                        <th scope="col"><div>{ld.Prospect__r.Name}</div></th>
+                        <th scope="col"><div>{ld.Status__c}</div></th>
+                        <th scope="col"><div>{ld.Assigned_To_Dealership__c}</div></th>
+                        <th scope="col"><div>{ld.Outcome__c}</div></th>
+                        <th scope="col"><div>{ld.Consultant__r.Name}</div></th>
+                        
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+       </lightning-card>
+        <div if:true={bShowModal} class="slds-p-top_large">
+            <c-lead-details record-id={selectedleadId} selected-lead-modal={selectedLeadModal}></c-lead-details>
+        </div>
+</template>

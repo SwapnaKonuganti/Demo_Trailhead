@@ -1,0 +1,53 @@
+<aura:component controller="expensecnt">
+    <!--<aura:handler name="init" value="{!this}" action="{!c.doInit}" />-->
+    <aura:attribute name="expenses" type="Expense__c[]"/>
+    <aura:attribute name="newExpense" type="Expense__c" 
+                    default="{'sobjectType':'Expense__c',
+                             			    'Name':'',
+                             				'Amount__c':0,
+                             				'Client__c':'',
+                             				'Date__c':'',
+                             				'Reimbursed__c':false
+                             	}" />
+    <aura:attribute name="total" type="Double" default="0.00" />
+    <aura:attribute name="exp" type="Double" default="0.00" />
+	    
+    <form>
+      <fieldset>
+          <ui:inputText aura:id="expname" label="Expense Name"
+                        class="form-control"
+                        value="{!v.newExpense.Name}"
+                        placeholder="My Expense" required="true" />
+          <ui:inputNumber aura:id="amount" label="Amount"
+                          class="form-control"
+                          value="{!v.newExpense.Amount__c}"
+                          placeholder="20.80" required="true"/>
+           <ui:inputText aura:id="client" label="Client"
+                          class="form-control"
+                          value="{!v.newExpense.Client__c}"
+                          placeholder="xyz co."/>
+           <ui:inputDateTime aura:id="expdate" label="Expense Date"
+                          class="form-control"
+                          value="{!v.newExpense.Date__c}"
+                          displayDatePicker="true"/>
+           <ui:inputCheckbox aura:id="reimbursed" label="Reimbursed"
+                          class="form-control"
+                          value="{!v.newExpense.Reimbursed__c}"/>
+          <ui:button label="submit" press="{!c.createExpense}"/>          
+      </fieldset>
+    </form>
+    
+    <!--Expense counters -->
+    <div class="row">
+        <!--Change the counter color to red if total amunt is more than 100 -->
+        <div class="{!v.total>=100? 'alert alert-danger' : 'alert alert-success'}">
+        	<h3> Total Expenses</h3> $<ui:outputNumber value="{!v.total}" format=".00"/>
+        </div>
+        <div class="alert alert-success">
+            <h3>No. of Exenses</h3>
+            <ui:outputNumber value="{!v.exp}"/>
+        </div>
+    </div>
+    
+    
+</aura:component>

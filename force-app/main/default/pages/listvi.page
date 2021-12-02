@@ -1,0 +1,19 @@
+<apex:page standardController="Student__c" recordSetVar="student" extensions="studentExtension">
+{!greetings}
+    <apex:form >
+        <apex:selectList size="1" value="{!filterId}" id="list">
+            <apex:selectOptions value="{!listviewoptions}" />
+            <apex:actionSupport event="onchange" status="listview" />
+
+        </apex:selectList>
+            <apex:commandButton value="Go"/>
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!student}" var="s">
+                    <apex:column value="{!s.Name}"/>
+                    <apex:column value="{!s.DOB__c}"/>
+                    <apex:column value="{!s.Class__c}"/>
+                    <apex:column value="{!s.City__c}"/>                                    
+                </apex:pageBlockTable>   
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

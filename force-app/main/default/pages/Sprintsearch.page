@@ -1,0 +1,42 @@
+<apex:page controller="AjaxController" id="page1">
+    <script>
+        function checksprintlength(){
+            var sprintText = document.getElementById('page1:form1:sprintText').value;
+            console.log(sprintText);
+            if(sprintText.length>3){
+                fetchSprints();
+            }
+        }
+        
+    </script>
+    <apex:form id="form1" >
+        <apex:outputtext value="{!count}" id="countSection"></apex:outputtext>
+        <apex:actionPoller interval="5" action="{!incrementCount}" rerender="countSection"/>
+        <apex:inputText value="{!sprintSearchText}" onkeyup="checksprintlength();" id="sprintText">
+             <!-- <apex:actionSupport event="onkeyup" action="{!searchSprint}" />   --> 
+        </apex:inputText>
+        <apex:commandButton value="Search" action="{!searchSprint}" rerender="tableBlock"/>
+        
+        <!--<apex:actionStatus startText="Loading...." stopText="Done...." id="loadAction"></apex:actionStatus>-->
+       <apex:actionStatus id="loadAction">
+            <apex:facet name="start">
+                <img src="/img/loading.gif"/>
+           </apex:facet>
+        </apex:actionStatus>
+        <br/>
+        <apex:selectList size="1" value="{!selectedproj}" onchange="fetchSprints();">
+            <apex:selectOptions value="{!lstprojects}"></apex:selectOptions>
+           <!--<apex:actionSupport event="onchange" action="{!searchSprint}" />-->
+        </apex:selectList>
+        <apex:actionFunction name="fetchSprints" action="{!searchSprint}" rerender="tableBlock" status="loadAction"/>
+        <apex:outputPanel id="tableBlock">
+           <apex:pageBlock >
+                <apex:pageBlockTable value="{!lstSprints}" var="sprintObj" rendered="{!if(lstSprints.size==0,false,true)}">>
+                    <apex:column value="{!sprintObj.Name}"/>
+                </apex:pageBlockTable>
+                <apex:outputLabel rendered="{!lstSprints.size=0}">No records found</apex:outputLabel>
+            </apex:pageBlock>
+        </apex:outputPanel>
+         
+    </apex:form>
+</apex:page>

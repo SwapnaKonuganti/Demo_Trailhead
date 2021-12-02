@@ -1,0 +1,5 @@
+<apex:page controller="NominationEmail" >
+  <!-- Begin Default Content REMOVE THIS -->
+  {!getRoleId}
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

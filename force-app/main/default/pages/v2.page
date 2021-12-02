@@ -1,0 +1,5 @@
+<apex:page standardController="Contact" >
+{!Contact.Name}
+{!Contact.Department}
+
+</apex:page>

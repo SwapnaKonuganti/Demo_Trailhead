@@ -1,0 +1,25 @@
+<apex:page StandardController="Account" extensions="AccountExt" sidebar="false">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection title="Patient Information" columns="1">
+<apex:inputField value="{!Account.Name}"/>
+<apex:inputField value="{!Account.Phone}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Address Information" columns="1">
+<apex:inputField value="{!Account.BillingCity}"/>
+<apex:inputField value="{!Account.BillingStreet}"/>
+<apex:inputField value="{!Account.BillingState}"/>
+<apex:inputField value="{!Account.BillingCountry}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Other Information" columns="1">
+<apex:inputField value="{!Account.Industry}"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!doSave}"/>
+<apex:commandButton value="close"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>
+  
+</apex:page>

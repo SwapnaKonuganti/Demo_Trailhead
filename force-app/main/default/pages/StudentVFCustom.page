@@ -1,0 +1,8 @@
+<apex:page controller="MyStudController" extensions="StudCustomext">
+Welcome {!greeting}{!student.Name}
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:outputText value="{!student.Name}"></apex:outputText>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

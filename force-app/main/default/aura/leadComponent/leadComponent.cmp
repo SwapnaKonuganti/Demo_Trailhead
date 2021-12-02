@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable">
+    <aura:attribute name="accountId" type="String"/>
+    <lightning:layout >
+        
+        <lightning:layoutItem class ="slds-p-right_medium" size="2">
+        <lightning:card title="Contact Details" iconName="action:add_contact">
+        <c:lwcLeadAccount/>
+        </lightning:card>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="10">
+    <lightning:card title="My Lead" iconName="action:new_lead" />
+    <c:leadslwc />
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

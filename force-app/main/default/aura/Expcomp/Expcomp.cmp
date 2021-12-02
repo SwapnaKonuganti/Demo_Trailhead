@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="val" type="Boolean" default="false" />
+    <aura:if isTrue="{!v.val}">
+        <ui:button label="submit"/>
+       <aura:set attribute="else">
+        Hello value is false
+        </aura:set>
+    </aura:if>
+</aura:component>

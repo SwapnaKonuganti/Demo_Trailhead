@@ -1,0 +1,82 @@
+<apex:page id="P1" showHeader="false">
+<apex:stylesheet value="{!$Resource.Demo}"/>
+   <Style>
+        .label{
+        color:blue;
+        font-size: 20Px;
+        font-weight:bold;
+        }
+        .label1{
+        color: green;
+        font-size:15px
+        font-weight: bold;
+        }
+        .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        }
+    
+    </Style>
+ 
+  <apex:form id="f1">
+      
+        <table border="1" align="center">
+            <tr>
+                <td colspan="2" align="center">
+                    <apex:outputText value="Arithmetic calculator" styleclass="label"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td >
+                    <apex:outputText value="First Number" styleclass="label1"/>
+                </td>
+                <td>
+                    <apex:inputText id="fi"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <apex:outputText value="Second Number" styleclass="label1"/>
+                </td>
+                <td>
+                    <apex:inputText id="se"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <apex:outputText value="Result" styleclass="label1"/>
+                </td>
+                <td>
+                    <apex:inputText id="Rs"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="3" align="center">
+                    <apex:commandButton value="SUM" style="background:Red" onclick="calculateSum();"/>
+                    <apex:commandButton value="Multiply" style="background:Yellow" onclick="calculateMultiply();"/>
+                    <apex:commandButton value="Min" style="background:Pink" onclick="calculateMin();"/>
+                </td>
+            </tr>
+        </table>
+  </apex:form>
+    
+    <script>
+    function calculateSum(){
+        alert('calc..');
+
+    }
+    function calculateMultiply(){
+        Var first=document.getElementById('P1:f1:fi').value;    
+        Var second=document.getElementById('P1:f1:se').value;
+        document.getElementById('P1:f1:Rs').value= first + Second;
+    }
+    function calculateMin(){
+        Var first=document.getElementById('P1:f1:fi').value;    
+        Var second=document.getElementById('P1:f1:se').value;
+        document.getElementById('P1:f1:Rs').value= first - Second;
+    }
+    </script>
+</apex:page>

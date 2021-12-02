@@ -1,0 +1,12 @@
+<apex:page controller="HTTPXMLCallout">
+    <apex:form >
+        <apex:pageBlock >
+                <apex:pageBlockTable value="{!lstpz}" var="w">
+                <apex:column headerValue="ID" value="{!w.id}"/>
+                <apex:column headerValue="Name" value="{!w.Name}" />
+                <apex:column headerValue="cost" value="{!w.cost}" />
+                <apex:column headerValue="Desc" value="{!w.description}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

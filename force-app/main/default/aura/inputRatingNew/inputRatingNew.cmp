@@ -1,0 +1,11 @@
+<aura:component>
+    <ltng:require 
+                  scripts="/resource/RatingPlugin/RatingPlugin/js/jquery.js,/resource/RatingPlugin/RatingPlugin/js/jquery.raty.js"
+                  styles="/resource/RatingPlugin/RatingPlugin/css/jquery.raty.css" 
+        afterScriptsLoaded="{!c.afterScriptsLoaded}"/>
+ 
+    <aura:attribute name="value" type="Integer" required="true"/>
+    <aura:attribute name="ready" type="Boolean" default="false"/>
+    
+    <div aura:id="rating"></div>
+</aura:component>

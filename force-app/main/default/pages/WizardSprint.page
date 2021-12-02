@@ -1,0 +1,23 @@
+<apex:page standardController="ProjectI__c" extensions="WizadSprint">
+    <apex:form >
+    	<apex:pageBlock title="Project Details">
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Continue" action="{!GotoPage2}"/>
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection title="Project Details">
+            	<apex:pageBlockSectionItem >
+                	<apex:outputText >Project Name: </apex:outputText>
+                    <apex:inputField value="{!ProjectI__c.Name}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputText >Budget: </apex:outputText>
+                    <apex:inputField value="{!ProjectI__c.Budget__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputText >Start Date: </apex:outputText>
+                    <apex:inputField value="{!ProjectI__c.Start_Date__c}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

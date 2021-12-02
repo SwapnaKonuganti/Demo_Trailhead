@@ -1,0 +1,9 @@
+<apex:component >
+    <apex:attribute name="stu" type="Student__c" description="individual student details" required="true"/>
+    <apex:pageBlock >
+    	<apex:pageBlockSection title="individual student details">
+        	<apex:outputText value="{!stu.name}"/>
+            <apex:outputText value="{!stu.Department__c}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:component>

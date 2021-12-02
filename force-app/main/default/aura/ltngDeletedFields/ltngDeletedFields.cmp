@@ -1,0 +1,14 @@
+<aura:component implements="force:lightningQuickAction">
+
+    <aura:attribute name="modalWidth" type="Integer" default="800"/>
+    <aura:attribute name="modalHeight" type="Integer" default="500" />
+    
+    <aura:attribute name="sObjectId" type="String" description="this attribute is used to store Salesforce Object Id"/>
+    <aura:attribute name="deletedFieldsURL" type="String" default="/p/setup/layout/DeletedFieldList?type=" description="Salesforce default Deleted Field URL is /p/setup/layout/DeletedFieldList?type= and append with sObject Id "/>
+    <aura:attribute name="objectLMidURL" type="String" default="/lightning/setup/ObjectManager/" description="this attribute is used to check whether the user is in ObjectManager Window or not"/>
+    <aura:attribute name="objectEndURL" type="String" default="/view" description="this attribute is used to check whether the user is in ObjectManager Window in view mode or not"/>
+    <aura:attribute name="alertMessage" type="String" default="Could not Find Object. Please navigate to object setup page via Setup -> Object Manager -> Select object-> then click on Global Action" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.handledeletedFields}"/>
+
+</aura:component>

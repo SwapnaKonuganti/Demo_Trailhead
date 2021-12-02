@@ -1,0 +1,36 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable">
+    <aura:attribute access="public" name="messages" type="String" description="Error/Success Message"/>
+    <aura:attribute name="isSpinner" type="Boolean" default="true"/>
+    <!--Component-->
+    
+    <div class="slds-m-around--xx-large">
+        <lightning:card title="WorkOrder" iconName="standard:work_order" class="slds-p-around_medium">
+            <lightning:recordEditForm aura:id="leadCreateForm" objectApiName="WorkOrder" onsuccess="{!c.handleOnSuccess}">
+                <aura:if isTrue="{!!v.messages}">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                            <lightning:inputField fieldName="Country__c"></lightning:inputField>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                            <lightning:inputField fieldName="OwnerId"></lightning:inputField>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                            <lightning:inputField fieldName="Subject"></lightning:inputField>
+                        </div>
+                    </div>
+                    <div class="slds-float--right">
+                    <lightning:button type="submit" label="Save" variant="brand"/>
+                    </div>
+                    <aura:set attribute="else">
+                        <div class="slds-text-align_center slds-text-heading_small ">
+                            <aura:text value="{!v.messages}" />
+                        </div>
+                        <lightning:messages/>
+                    </aura:set>
+                </aura:if>
+            </lightning:recordEditForm>
+        </lightning:card>
+    </div>    
+</aura:component>

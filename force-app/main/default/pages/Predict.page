@@ -1,0 +1,22 @@
+<apex:page Controller="VisionController">
+  <apex:form >
+  <apex:pageBlock >
+      <apex:image url="https://mm.aiircdn.com/305/5aad5bd732cfc.jpg">
+      </apex:image>
+      <br/>
+     <!-- <apex:repeat value="{!AccessToken}" var="accessToken">
+          Access Token:<apex:outputText value="{!accessToken}" /><br/>
+    </apex:repeat-->
+      <br/>
+        <apex:pageBlockTable value="{!callVisionUrl}"  var="prediction">
+                <apex:column value="{!prediction.label}"/> 
+                <apex:column value="{!prediction.probability}"/> 
+            </apex:pageBlockTable>
+  </apex:pageBlock>
+<!--  <apex:pageBlock > -->
+<!--      <apex:repeat value="{!callVisionContent}" var="prediction"> -->
+<!--          <apex:outputText value="{!prediction.label}" />:<apex:outputText value="{!prediction.probability}" /><br/> -->
+<!--    </apex:repeat> -->
+<!--  </apex:pageBlock> -->
+  </apex:form>
+</apex:page>

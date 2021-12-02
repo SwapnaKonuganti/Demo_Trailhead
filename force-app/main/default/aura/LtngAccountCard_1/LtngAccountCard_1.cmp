@@ -1,0 +1,23 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome">
+	 <aura:attribute name="accountRecord" type="Object"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    
+    <force:recordData aura:id="recordLoader"
+        recordId="{!v.recordId}"
+        fields="Account_No__c,IFSC_Code__c"
+        targetFields="{!v.accountRecord}"
+        targetError="{!v.recordLoadError}"
+        />
+    <lightning:card  title="Account Card" >
+    <div>
+        <div class="slds-p-horizontal--small">
+                <p class="slds-text-heading--small">
+                    <lightning:formattedText title="Account No : " value="{!v.accountRecord.Account_No__c}" /></p>
+
+                <p class="slds-text-heading--small">
+                    <lightning:formattedText title="IFSC Code :" value="{!v.accountRecord.IFSC_Code__c }" /></p>
+                
+            </div>
+    </div>
+    </lightning:card>
+</aura:component>

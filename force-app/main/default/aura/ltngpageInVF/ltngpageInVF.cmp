@@ -1,0 +1,6 @@
+<aura:component >
+    <div>
+    	<h1> This is Lightnig Compnent</h1>
+    </div>
+	
+</aura:component>

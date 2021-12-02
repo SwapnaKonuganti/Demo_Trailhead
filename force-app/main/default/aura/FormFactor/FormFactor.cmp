@@ -1,0 +1,6 @@
+<aura:component >
+Is it Iphone	{!$Browser.isIPhone} <br></br>
+Is it Tablet    {!$Browser.isTablet} <br></br>
+Is it Android   {!$Browser.isAndroid} <br></br>
+or what is this   {!$Browser.formFactor}
+</aura:component>

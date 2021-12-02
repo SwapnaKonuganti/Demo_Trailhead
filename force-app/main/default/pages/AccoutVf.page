@@ -1,0 +1,14 @@
+<apex:page Controller="AccountVfClass">
+    <apex:form >
+    <apex:outputText value="Name"/> &nbsp;
+    <apex:inputtext value="{!Key}"/> &nbsp;
+    <apex:commandButton value="Search" action="{!dosearch}"/>
+    
+    <apex:pageBlock title="Account Details" rendered="{!If(acct.size=0,false,true)}">
+        <apex:pageBlockTable value="{!acct}" var="a">
+        <apex:column headerValue="Id" value="{!a.id}"/>
+        <apex:column headerValue="Name" value="{!a.Name}"/>        
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>
